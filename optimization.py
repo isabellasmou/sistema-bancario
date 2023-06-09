@@ -8,13 +8,13 @@ class Banco:
         self.numero_conta = 1
 
     def cadastrar_usuario(self, nome, data_nascimento, cpf, endereco):
-        # Verifica se o CPF já está cadastrado
+        
         for usuario in self.usuarios:
             if usuario['cpf'] == cpf:
                 print('CPF já cadastrado. Não é possível cadastrar o usuário.')
                 return
         
-        # Armazena apenas os números do CPF
+        
         cpf = cpf.replace('.', '').replace('-', '')
 
         usuario = {
@@ -27,7 +27,7 @@ class Banco:
         print('Usuário cadastrado com sucesso.')
 
     def cadastrar_conta(self, cpf):
-        # Filtra a lista de usuários buscando pelo número do CPF informado
+        
         usuarios_encontrados = [usuario for usuario in self.usuarios if usuario['cpf'] == cpf]
 
         if len(usuarios_encontrados) == 0:
